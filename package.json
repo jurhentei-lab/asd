@@ -1,0 +1,22 @@
+{
+  "name": "ebms",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "dev:remote": "wrangler dev --remote",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 execute asd --local --file=./migrations/0001_init.sql && wrangler d1 execute asd --local --file=./migrations/0002_seed_baseline.sql",
+    "db:migrate:remote": "wrangler d1 execute asd --remote --file=./migrations/0001_init.sql && wrangler d1 execute asd --remote --file=./migrations/0002_seed_baseline.sql"
+  },
+  "dependencies": {
+    "graphql": "^16.10.0",
+    "graphql-yoga": "^5.13.0",
+    "hono": "^4.7.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260303.0",
+    "wrangler": "^4.5.0"
+  }
+}
